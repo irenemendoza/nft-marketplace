@@ -248,6 +248,7 @@ textarea {
 
 /* Donde comienza el proyecto */
 
+
 :root {
   --color-red: #FA504D;
   --color-black: #2E2F38;
@@ -260,9 +261,16 @@ textarea {
   --text-size3: 24px;
 }
 
+
+* *::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
 
-  background-color: var(--color-black);
   background-image: linear-gradient(to right, var(--color-white) 55%, var(--color-black) 55%);
 }
 
@@ -345,10 +353,12 @@ body {
   grid-template-areas: "title product"
     "related product"
   ;
+  gap: 50px;
 }
 
 .page .title {
   grid-area: title;
+  max-height: fit-content;
 }
 
 .page .title h1 {
@@ -441,9 +451,26 @@ body {
 
 .gallery-image {
   grid-area: product;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.gallery-image::before {
+  content: "Artzie.";
+  display: block;
+  width: 400px;
+  height: 300px;
+  color: white;
+  opacity: 0.03;
+  z-index: -1;
+  font-family: var(--title-font);
+  font-size: 200px;
+  font-weight: 400;
+  position: absolute;
+  transform: rotate(90deg);
+  right: -180px;
+  top: 50px;
 }
 
 .gallery-image img {
@@ -458,7 +485,7 @@ body {
   width: 550px;
   font-family: var(--text-font);
   padding: 10px;
-
+  margin: 0;
 }
 
 
@@ -547,7 +574,41 @@ body {
   color: var(--color-black);
 }
 
+.total {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total div {
+  font-family: var(--text-font);
+  color: var(--color-white);
+  font-size: var(--text-size);
+  padding: 5px;
+  margin: 20px 0;
+}
+
+.total div span {
+  font-size: var(--text-size3);
+  color: var(--color-red);
+  padding: 5px;
+}
+
 
 .more {
   grid-area: related;
+}
+
+.more .more-content {
+  display: flex;
+  gap: 20px;
+
+}
+
+.more .more-content article img {
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--color-gray);
+  box-sizing: border-box;
 }
