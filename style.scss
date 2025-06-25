@@ -267,6 +267,7 @@ textarea {
   color: white;
   padding: 7px 25px;
   text-decoration: none;
+  text-align: center;
 }
 
 *,
@@ -349,13 +350,6 @@ body {
   color: var(--color-red);
 }
 }
-
-
-
-
-
-
-
 
 }
 
@@ -479,7 +473,8 @@ body {
         display: inline-block;
         width: 40px;
         position: absolute;
-        margin: 10px;
+        margin: 15px;
+        padding-top: 3px;
       }
 
       
@@ -488,22 +483,87 @@ body {
         display: flex;
         justify-content: space-between;
         padding: 20px;
+        padding-bottom: 0;
         margin-left: 40px;
         color: var(--color-gray);
       }
 
       & .currency-price {
+        box-sizing: border-box;
         display: flex;
         justify-content: space-between;
-        padding: 20px;
-        margin-left: 40px;
+        padding: 5px;
+        padding-top: 0;
+        padding-left: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
+        border-bottom: 1px solid var(--color-black);
+      
+      & p{
         font-weight: 600;
         font-size: var(--text-size2);
+        
+      }
+      }
+
+      & .buttons ul {
+      list-style: none;
+      display: flex;
+      padding: 20px;
+      justify-content: space-between;
+
+      & a {
+        @include button();
+        width: 45%;
+        &:hover {
+          color: var(--color-red);
+          background-color: var(--color-white);
+        }
+      }
+
       }
     }
 
+    & .total {
+      width: 450px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--color-white);
+      padding: 20px 0;
+
+      & span {
+        color: var(--color-red);
+        font-size: var(--text-size3);
+        padding: 10px;
+      }
+    }
+  }
+
+  & .more {
+    h2 {
+      font-family: var(--title-font);
+      font-size: var(--text-size2);
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .more-content {
+      display: flex;
+      justify-content: space-between;
+
+      img {
+        max-width: 85%;
+        border: 1px solid var(--color-gray);
+        padding: 10px;
+      }
+    }
+  }
    
 }
+
+  
+
+
 
 /*  
 
@@ -643,4 +703,4 @@ body {
   border: 1px solid var(--color-gray);
   box-sizing: border-box;
 }
-  */}
+  */
