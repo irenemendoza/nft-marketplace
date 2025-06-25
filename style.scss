@@ -1,13 +1,16 @@
 /*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
 /* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+
 html {
   color: #222;
   font-size: 1em;
@@ -20,6 +23,7 @@ html {
  *
  * Customize the background color to match your design.
  */
+
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -33,6 +37,7 @@ html {
 /*
  * A better looking default horizontal rule
  */
+
 hr {
   display: block;
   height: 1px;
@@ -47,6 +52,7 @@ hr {
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
+
 audio,
 canvas,
 iframe,
@@ -59,6 +65,7 @@ video {
 /*
  * Remove default fieldset styles.
  */
+
 fieldset {
   border: 0;
   margin: 0;
@@ -68,6 +75,7 @@ fieldset {
 /*
  * Allow only vertical resizing of textareas.
  */
+
 textarea {
   resize: vertical;
 }
@@ -75,12 +83,15 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
 /*
  * Hide visually and from screen readers
  */
+
 .hidden,
 [hidden] {
   display: none !important;
@@ -94,6 +105,7 @@ textarea {
  *    causes content to wrap 1 word per line:
  *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
  */
+
 .visually-hidden {
   border: 0;
   clip: rect(0, 0, 0, 0);
@@ -112,6 +124,7 @@ textarea {
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
+
 .visually-hidden.focusable:active,
 .visually-hidden.focusable:focus {
   clip: auto;
@@ -126,6 +139,7 @@ textarea {
 /*
  * Hide visually and from screen readers, but maintain layout
  */
+
 .invisible {
   visibility: hidden;
 }
@@ -136,6 +150,7 @@ textarea {
  * The use of `table` rather than `block` is only necessary if using
  * `::before` to contain the top-margins of child elements.
  */
+
 .clearfix::before,
 .clearfix::after {
   content: "";
@@ -151,18 +166,26 @@ textarea {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
 }
-@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
+
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
    https://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
+
 @media print {
+
   *,
   *::before,
   *::after {
@@ -172,16 +195,20 @@ textarea {
     box-shadow: none !important;
     text-shadow: none !important;
   }
+
   a,
   a:visited {
     text-decoration: underline;
   }
+
   a[href]::after {
     content: " (" attr(href) ")";
   }
+
   abbr[title]::after {
     content: " (" attr(title) ")";
   }
+
   /*
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
@@ -190,30 +217,38 @@ textarea {
   a[href^="javascript:"]::after {
     content: "";
   }
+
   pre {
     white-space: pre-wrap !important;
   }
+
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
+
   tr,
   img {
     page-break-inside: avoid;
   }
+
   p,
   h2,
   h3 {
     orphans: 3;
     widows: 3;
   }
+
   h2,
   h3 {
     page-break-after: avoid;
   }
 }
+
 /* Donde comienza el proyecto */
+
+
 :root {
   --color-red: #FA504D;
   --color-black: #2E2F38;
@@ -224,6 +259,14 @@ textarea {
   --text-size: 12px;
   --text-size2: 16px;
   --text-size3: 24px;
+}
+
+@mixin button () {
+  display: inline-block;
+  background-color: var(--color-red);
+  color: white;
+  padding: 7px 25px;
+  text-decoration: none;
 }
 
 *,
@@ -237,6 +280,7 @@ textarea {
 }
 
 body {
+
   background-image: linear-gradient(to right, var(--color-white) 55%, var(--color-black) 55%);
 }
 
@@ -252,73 +296,93 @@ body {
   gap: 70px;
   align-items: center;
   margin-bottom: 20px;
-}
-.header a {
-  text-decoration: none;
-}
-.header img {
+
+  & a {
+    text-decoration: none;
+  }
+
+  & img {
   width: 80px;
 }
-.header ul {
+
+& ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   gap: 50px;
 }
-.header .menu li a {
+
+& .menu li a {
+  
   color: var(--color-black);
-}
-.header .menu li a:hover {
+
+  &:hover {
   text-decoration: underline;
 }
-.header aside {
+
+}
+
+& aside {
   margin-left: auto;
   display: flex;
   gap: 40px;
   align-items: baseline;
-}
-.header aside a:first-of-type {
+
+  & a:first-of-type {
   font-family: var(--text-font);
   font-size: var(--text-size);
   font-weight: 500;
   color: var(--color-white);
-  -webkit-text-decoration: dashed;
-          text-decoration: dashed;
-}
-.header aside a:first-of-type:hover {
+  text-decoration: dashed;
+  &:hover {
   color: var(--color-red);
 }
-.header aside a.button {
-  display: inline-block;
-  background-color: var(--color-red);
-  color: white;
-  padding: 7px 25px;
-  text-decoration: none;
-}
-.header aside a.button:hover {
+  }
+
+
+& a.button {
+  @include button();
+
+  &:hover {
   background-color: var(--color-white);
   color: var(--color-red);
+}
+}
+
+
+
+
+
+
+
+
+}
+
+
+
+
 }
 
 .page {
   width: 100%;
   display: grid;
-  grid-template-columns: 60% 40%;
+ grid-template-columns: 60% 40%;
+  ;
   gap: 50px;
-}
-.page .title {
+
+& .title {
   grid-column: 1/span 1;
-}
-.page .title h1 {
+
+
+  & h1 {
   font-family: var(--title-font);
   font-size: 40px;
   font-weight: 100;
   margin: 0;
   padding-top: 40px;
   position: relative;
-}
-.page .title h1 span {
+& span {
   font-family: var(--title-font);
   font-size: 40px;
   background-image: url(../img/Vector.svg);
@@ -326,40 +390,49 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
-.page .title p {
+}
+  & p {
   font-family: var(--text-font);
   font-size: var(--text-size2);
   color: var(--color-gray);
   margin-bottom: 35px;
-}
-.page .title p::after {
+
+  &::after {
   content: " ";
   display: block;
   background-image: linear-gradient(to right, red, red);
   width: 60px;
   height: 3px;
+
+
 }
-.page .options {
+
+}
+}
+
+& .options {
   display: flex;
   gap: 20px;
-}
-.page .options a.button {
-  display: inline-block;
-  background-color: var(--color-red);
-  color: white;
-  padding: 7px 25px;
-  text-decoration: none;
-  padding: 7px 40px;
-  transition: all 0.2s ease;
-}
-.page .options a.button:hover {
+
+  & a.button {
+    @include button();
+    padding: 7px 40px;
+    transition: all 0.2s ease;
+  &:hover {
+
   background-color: var(--color-white);
   color: var(--color-red);
   border: 1px solid var(--color-red);
   font-weight: 600;
   padding: 5px 38px;
+
 }
-.page .options .page .title a:last-of-type {
+
+}
+
+
+
+.page .title a:last-of-type {
   font-family: var(--text-font);
   font-size: var(--text-size);
   color: var(--color-black);
@@ -369,25 +442,49 @@ body {
   text-decoration: underline;
   transition: all 0.5s ease;
 }
-.page .options .page .title a:last-of-type:hover {
+
+.page .title a:last-of-type:hover {
   color: var(--color-white);
   background-color: var(--color-red);
   padding: 10px 20px;
+
 }
-.page .options .page .title a:last-of-type:after {
+
+.page .title a:last-of-type:after {
   display: inline-block;
   content: url(../img/Arrow.svg);
   width: 20px;
   position: relative;
   top: 17px;
   left: 2px;
+
 }
+
+}
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
 
 .gallery-image {
   grid-area: product;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+
 }
 
 .gallery-image::before {
@@ -421,6 +518,7 @@ body {
   padding: 10px;
   margin: 0;
 }
+
 
 .image-info .artist table {
   width: 100%;
@@ -465,9 +563,11 @@ body {
   background-size: cover;
   background-position: center;
   background-position: left center;
+
   position: absolute;
   top: 13px;
   left: 10px;
+
 }
 
 .artist::after {
@@ -525,6 +625,7 @@ body {
   padding: 5px;
 }
 
+
 .more {
   grid-area: related;
 }
@@ -532,6 +633,7 @@ body {
 .more .more-content {
   display: flex;
   gap: 20px;
+
 }
 
 .more .more-content article img {
@@ -540,4 +642,4 @@ body {
   padding: 10px;
   border: 1px solid var(--color-gray);
   box-sizing: border-box;
-}/*# sourceMappingURL=style.css.map */
+}
